@@ -23,7 +23,9 @@
             var state = null;
             function onVrViewLoad() {
                 vrView = new VRView.Player('#vrview', {
-                    video: '//meditatesttaito.streaming.mediaservices.windows.net/bd6d1290-74f2-44e4-9386-d1ebc8c3eea7/Sample1.ism/manifest(format=mpd-time-csf).mpd'
+                    video: '//meditatesttaito.streaming.mediaservices.windows.net/bd6d1290-74f2-44e4-9386-d1ebc8c3eea7/Sample1.ism/manifest(format=mpd-time-csf).mpd',
+                    width: 100%,
+                    height: 100%
                 });
                 vrView.on('ready', function(){ 
                     vrView.pause();
