@@ -20,7 +20,7 @@
                 vrView = new VRView.Player('#vrview', {
                     video: '//meditatesttaito.streaming.mediaservices.windows.net/bd6d1290-74f2-44e4-9386-d1ebc8c3eea7/Sample1.ism/manifest(format=mpd-time-csf).mpd'
                 });
-                vrView.on('ready, function(){ 
+                vrView.on('ready', function(){ 
                     vrView.pause();
                 });
             }
