@@ -98,3 +98,10 @@ canvas:active {
 #error .message {
   font-family: monospace;
 }
+
+#range {
+	z-index: 100;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
