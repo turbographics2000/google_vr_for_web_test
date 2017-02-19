@@ -26,14 +26,57 @@
             <img src="images/ic_info_outline_black_24dp.svg" />
         </a>
 
+        <div id="range"></div>
         <script>
-        WebVRConfig = {
-            BUFFER_SCALE: 0.5,
-            TOUCH_PANNER_DISABLED: false
-        };
-    </script>
+            WebVRConfig = {
+                BUFFER_SCALE: 0.5,
+                TOUCH_PANNER_DISABLED: false
+            };
+            noUiSlider.create(range, {
+                start: 0,
+                animate: false,
+                animationDuration: 0,
+                connect: [true, false],
+                orientation: 'horizontal',
+                behaviour: 'tap-drag',
+                tooltips: false,
+                range: {
+                    'min': 0,
+                    'max': 1
+                }
+            });
+            var player = null;
+            function uiControlAttachToPlayer(p) {
+                player = p;
+                player.onclick = function () {
+                    if (player.paused) {
+                        player.play();
+                    } else {
+                        player.pause();
+                    }
+                }
+                range.noUiSlider.on('update', function (values) {
+                    //console.log(values[0]);
+                });
+                range.noUiSlider.on('slide', function () {
+                    player.currentTime = range.noUiSlider.get() * player.duration;
+                });
+                range.noUiSlider.on('set', function () {
+                    //console.log('set');
+                });
+                range.noUiSlider.on('change', function () {
+                    //console.log('change');
+                });
+                range.noUiSlider.on('start', function () {
+                    player.pause();
+                });
+                range.noUiSlider.on('end', function () {
+                    player.play();
+                });
+            }
+        </script>
 
-<script src="build/three.js"></script>
-<script src="build/embed.js"></script>
-</body>
+        <script src="build/three.js"></script>
+        <script src="build/embed.js"></script>
+    </body>
 </html>
