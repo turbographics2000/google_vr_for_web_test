@@ -51,6 +51,7 @@
                 }
             });
             var player = null;
+            var rafId = null;
             function uiControlAttachToPlayer(p) {
                 player = p;
                 range.noUiSlider.on('update', function (values) {
@@ -71,7 +72,9 @@
                 range.noUiSlider.on('end', function () {
                     player.play();
                 });
-                raf();
+
+                if(rafId) cancelAnimationFrame(raf);
+                rafId = requestAnimationFrame(raf);
             }
             function tapHandler(canvas) {
                 window.addEventListener('click', function () {
