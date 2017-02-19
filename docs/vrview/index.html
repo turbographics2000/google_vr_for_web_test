@@ -71,14 +71,16 @@
                     player.play();
                 });
             }
+            var cnv;
             function tapHandler(canvas) {
-                canvas.onclick = function () {
+                cnv = canvas;
+                canvas.addEventListener('click', function () {
                     if (player.paused) {
                         player.play();
                     } else {
                         player.pause();
                     }
-                }
+                });
             }
         </script>
 
