@@ -71,10 +71,8 @@
                     player.play();
                 });
             }
-            var cnv;
-            function tapHandler(canvas) {
-                cnv = canvas;
-                canvas.addEventListener('click', function () {
+            function tapHandler() {
+                window.addEventListener('click', function () {
                     if (player.paused) {
                         player.play();
                     } else {
