@@ -8,6 +8,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <link rel="stylesheet" href="style.css">
+        <link href="nouislider.min.css" rel="stylesheet">
     </head>
 
     <body>
@@ -71,8 +72,10 @@
                     player.play();
                 });
             }
-            function tapHandler() {
-                window.addEventListener('click', function () {
+            var cnv;
+            function tapHandler(canvas) {
+                cnv = canvas;
+                canvas.addEventListener('click', function () {
                     if (player.paused) {
                         player.play();
                     } else {
