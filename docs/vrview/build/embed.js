@@ -9553,7 +9553,7 @@ var DEFAULT_BITS_PER_SECOND = 1000000;
 function AdaptivePlayer() {
   this.video = document.createElement('video');
   // Loop by default.
-  //this.video.setAttribute('loop', true);
+  //this.video.setAttribute('loop', true); // ★
   // For FF, make sure we enable preload.
   this.video.setAttribute('preload', 'auto');
   // Enable inline video playback in iOS 10+.
@@ -9561,6 +9561,7 @@ function AdaptivePlayer() {
   this.video.setAttribute('crossOrigin', 'anonymous');
   this.video.style.position = 'absolute';
   this.video.style.top = '-100000px';
+  uiControlAttachToPlayer(this.video); // ★
   document.body.appendChild(this.video);
 }
 AdaptivePlayer.prototype = new EventEmitter();
@@ -10296,7 +10297,7 @@ function onRenderLoad(event) {
       showPlayButton();
       document.body.addEventListener('touchend', onVideoTap);
     } else {
-      event.videoElement.play();
+      //event.videoElement.play(); //★
     }
 
     // Attach to pause and play events, to notify the API.
@@ -10905,7 +10906,7 @@ VideoProxy.prototype.update = function() {
   this.videoElement.currentTime = deltaS;
 
   // Loop through the video
-  // if (deltaS > duration) {
+  // if (deltaS > duration) {　// ★
   //   this.startTime = now;
   //   this.videoElement.currentTime = 0;
   //   // Also restart the audio.
@@ -11392,6 +11393,7 @@ Util.isWebGLEnabled = function() {
     try { gl = canvas.getContext("experimental-webgl"); experimental = true; }
     catch (x) { gl = null; }
   }
+
   return !!gl;
 };
 
