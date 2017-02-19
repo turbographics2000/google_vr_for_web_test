@@ -19,31 +19,36 @@
                 position: relative;
             }
         </style>
-        <script>
-            /*window.addEventListener('load', onVrViewLoad);
-            var vrView = null;
-            var state = null;
-            function onVrViewLoad() {
-                vrView = new VRView.Player('#vrview', {
-                    video: '//meditatesttaito.streaming.mediaservices.windows.net/bd6d1290-74f2-44e4-9386-d1ebc8c3eea7/Sample1.ism/manifest(format=mpd-time-csf).mpd',
-                    width: '100%',
-                    height: '100%'
-                });
-                vrView.on('ready', function(){ 
-                    vrView.pause();
-                    state = 'pause';
-                });
-                vrView.on('click', function() {
-                    if(state === 'pause') {
-                        vrView.play();
-                        state = 'play';
-                    } else {
-                        vrView.pause();
-                        state = 'pause';
-                    }
-                });
-            }*/
-        </script>
+        
+</head>
+
+<body>
+   <iframe allowfullscreen="true" scrolling="no" width="100%" height="100%" src="/vrview/index.html?video=//meditatesttaito.streaming.mediaservices.windows.net/bd6d1290-74f2-44e4-9386-d1ebc8c3eea7/Sample1.ism/manifest(format=mpd-time-csf).mpd"></iframe>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VR View - video example</title>
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <meta charset="utf-8" />
+        <link href="//fonts.googleapis.com/css?family=Lora|Open+Sans" rel="stylesheet" type="text/css">
+        <!--<script src="//storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>-->
+        <!--<script src="//vrview/build/vrview.min.js"></script>-->
+        <style>
+            html, body{
+                width: 100%;
+                height: 100%;
+                margin: 0;
+            }
+            #vrview{
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+        </style>
+        
 </head>
 
 <body>
