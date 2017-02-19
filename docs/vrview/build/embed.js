@@ -10905,12 +10905,12 @@ VideoProxy.prototype.update = function() {
   this.videoElement.currentTime = deltaS;
 
   // Loop through the video
-  if (deltaS > duration) {
-    this.startTime = now;
-    this.videoElement.currentTime = 0;
-    // Also restart the audio.
-    this.audioElement.currentTime = 0;
-  }
+  // if (deltaS > duration) {
+  //   this.startTime = now;
+  //   this.videoElement.currentTime = 0;
+  //   // Also restart the audio.
+  //   this.audioElement.currentTime = 0;
+  // }
 };
 
 module.exports = VideoProxy;
