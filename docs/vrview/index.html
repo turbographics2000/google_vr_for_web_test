@@ -76,8 +76,13 @@
                 if(rafId) cancelAnimationFrame(raf);
                 rafId = requestAnimationFrame(raf);
             }
+            var mouseDownPos = null;
             function tapHandler(canvas) {
-                window.addEventListener('click', function (evt) {
+                window.addEventListener('mousedown', function (evt) {
+                    mousedownPos = {x: evt.pageX, y: evt.pageY};
+                });
+                window.addEventListener('mouseup', function(evt) {
+                    if(Math.abs(mousedownPos.x - evt.pageX) > 4 || Math.abs(mousedownPos.y - evt.pageY) > 4) return;   
                     if(!(evt.srcElement instanceof HTMLCanvasElement)) return;
                     console.log(evt.srcElement);
                     if (player.paused) {
