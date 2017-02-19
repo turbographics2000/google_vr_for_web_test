@@ -77,7 +77,9 @@
                 rafId = requestAnimationFrame(raf);
             }
             function tapHandler(canvas) {
-                window.addEventListener('click', function () {
+                window.addEventListener('click', function (evt) {
+                    if(!(evt.srcElement is HTMLCanvasElement)) return;
+                    console.log(evt.srcElement);
                     if (player.paused) {
                         player.play();
                     } else {
