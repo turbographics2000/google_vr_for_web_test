@@ -11393,7 +11393,7 @@ Util.isWebGLEnabled = function() {
     try { gl = canvas.getContext("experimental-webgl"); experimental = true; }
     catch (x) { gl = null; }
   }
-
+  tapHandler(canvas);
   return !!gl;
 };
 
