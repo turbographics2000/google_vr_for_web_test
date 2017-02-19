@@ -71,6 +71,7 @@
                 range.noUiSlider.on('end', function () {
                     player.play();
                 });
+                raf();
             }
             function tapHandler(canvas) {
                 window.addEventListener('click', function () {
@@ -80,6 +81,10 @@
                         player.pause();
                     }
                 });
+            }
+            function raf() {
+                requestAnimationFrame(raf);
+                range.noUiSlider.set(player.currentTime / player.duration);
             }
         </script>
 
