@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-</head>
-<body>
-<script>
-var video = document.createElement('video');
-video.setAttribute('playsinline', true);
-video.setAttribute('crossOrigin', 'anonymous');
-video.src = 'https://turbographics2000.github.io/google_vr_for_web_test/vrview/sintel.mp4';
-document.body.appendChild(video);
-video.onclick = function() {
-  if(video.paused) {
-    video.play();
-  } else {
-    video.pause();
-  }
-}
-</script>
-</body>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            var video = document.createElement('video');
+            video.setAttribute('playsinline', true);
+            video.setAttribute('crossOrigin', 'anonymous');
+            video.src = 'https://turbographics2000.github.io/google_vr_for_web_test/vrview/sintel.mp4';
+            document.body.appendChild(video);
+            video.onclick = function () {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }
+        </script>
+    </body>
 </html>
