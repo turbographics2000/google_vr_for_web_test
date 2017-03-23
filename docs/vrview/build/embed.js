@@ -2719,6 +2719,7 @@ ButtonManager.prototype.setMode = function(mode, isVRCompatible) {
   }
   switch (mode) {
     case Modes.NORMAL:
+      window.range.style.display = 'block'; // ★
       this.fsButton.style.display = 'block';
       this.fsButton.src = this.ICONS.fullscreen;
       this.vrButton.style.display = (isVRCompatible ? 'block' : 'none');
@@ -2729,6 +2730,7 @@ ButtonManager.prototype.setMode = function(mode, isVRCompatible) {
       this.vrButton.style.display = 'none';
       break;
     case Modes.VR:
+      window.range.style.display = 'none'; // ★
       this.fsButton.style.display = 'none';
       this.vrButton.style.display = 'none';
       break;
@@ -10297,7 +10299,7 @@ function onRenderLoad(event) {
       showPlayButton();
       document.body.addEventListener('touchend', onVideoTap);
     } else {
-      //event.videoElement.play(); //★
+      //event.videoElement.play(); // ★
     }
 
     // Attach to pause and play events, to notify the API.
